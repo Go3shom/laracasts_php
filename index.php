@@ -29,8 +29,7 @@
         ],
     ];
 
-    function filterByAuthor($books, $author)
-    {
+    $filterByAuthor = function ($books, $author) {
         $filteredBooks = [];
 
         foreach ($books as $book) {
@@ -40,9 +39,9 @@
         }
 
         return $filteredBooks;
-    }
+    };
 
-    $filteredBooks = filterByAuthor($books, 'Philip K. Dick');
+    $filteredBooks = $filterByAuthor($books, 'Philip K. Dick');
     ?>
 
     <ul>
