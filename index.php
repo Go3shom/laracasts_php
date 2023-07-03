@@ -3,7 +3,8 @@
 require 'functions.php';
 
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
 
 if ($uri === '/') {
     require 'controllers/index.php';
