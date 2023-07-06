@@ -1,16 +1,11 @@
 <?php
 
 require 'functions.php';
-require 'Database.php';
 // require 'router.php';
+require 'Database.php';
 
 
-$config = [
-    'host' => 'localhost',
-    'dbname' => 'laracasts_php',
-    'port' => '3306',
-    'charset' => 'utf8mb4',
-];
+$config = require('config.php');
 
 $db = new Database($config);
 
