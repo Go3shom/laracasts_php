@@ -7,12 +7,19 @@ require 'functions.php';
 // Connect to our MySQL database.
 class Database
 {
-    public function query()
+    public $connection;
+
+
+    public function __construct()
     {
         $dns = "mysql:host=localhost;dbname=laracasts_php;port=3306;user=root;password=password@1234;charset=utf8mb4";
-        $pdo = new PDO($dns);
+        
+        $this->connection = new PDO($dns);
+    }
 
-        $statement = $pdo->prepare("SELECT * FROM `posts`;");
+    public function query($query)
+    {
+        $statement = $this->connection->prepare($query);
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -20,7 +27,7 @@ class Database
 }
 
 $db = new Database();
-$posts = $db->query();
+$posts = $db->query("SELECT * FROM `posts`;");
 
 
 foreach ($posts as $post) {
