@@ -22,13 +22,13 @@ class Database
         $statement = $this->connection->prepare($query);
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }
 
 $db = new Database();
-// Using `fetchAll` will return an array, which isn't suitable in case of fetching single post
+// Using `fetch` instead, will return a single post perfectly fine
 $post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;");
 
 
-dd($post[0]['title']);
+dd($post['title']);
