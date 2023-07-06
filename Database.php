@@ -4,16 +4,8 @@ class Database
 {
     public $connection;
 
-
-    public function __construct()
+    public function __construct($config)
     {
-        $config = [
-            'host' => 'localhost',
-            'dbname' => 'laracasts_php',
-            'port' => '3306',
-            'charset' => 'utf8mb4',
-        ];
-
         $dsn = 'mysql:' . http_build_query($config, '', ';');
 
 
