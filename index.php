@@ -22,13 +22,13 @@ class Database
         $statement = $this->connection->prepare($query);
         $statement->execute();
 
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        return $statement;
     }
 }
 
 $db = new Database();
 // Using `fetch` instead, will return a single post perfectly fine
-$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;");
+$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;")->fetch(PDO::FETCH_ASSOC);
 
 
 dd($post['title']);
