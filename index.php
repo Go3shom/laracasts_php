@@ -13,7 +13,7 @@ class Database
     public function __construct()
     {
         $dsn = "mysql:host=localhost;dbname=laracasts_php;port=3306;user=root;password=password@1234;charset=utf8mb4";
-        
+
         $this->connection = new PDO($dsn);
     }
 
@@ -27,9 +27,8 @@ class Database
 }
 
 $db = new Database();
-$posts = $db->query("SELECT * FROM `posts`;");
+// Using `fetchAll` will return an array, which isn't suitable in case of fetching single post
+$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;");
 
 
-foreach ($posts as $post) {
-    echo '<li>' . $post['title'] . '</li>';
-}
+dd($post[0]['title']);
