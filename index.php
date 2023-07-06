@@ -9,7 +9,10 @@ $config = require('config.php');
 
 $db = new Database($config['database']);
 
-$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;")->fetch();
+$id = $_GET['id'];
+$query = "SELECT * FROM `posts` WHERE `id` = ?";
+
+$posts = $db->query($query, [$id])->fetch();
 
 
-dd($post['title']);
+dd($posts);
