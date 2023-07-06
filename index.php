@@ -6,7 +6,7 @@ require 'Database.php';
 
 
 $db = new Database();
-$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;")->fetch(PDO::FETCH_ASSOC);
+$post = $db->query("SELECT * FROM `posts` WHERE `id` = 1;")->fetch();
 
 
 dd($post['title']);
