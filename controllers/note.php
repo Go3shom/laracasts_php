@@ -5,6 +5,7 @@ $db = new Database($config['database']);
 
 
 $heading = 'Note';
+$currentUserID = 1;
 
 
 $note = $db->query(
@@ -12,6 +13,15 @@ $note = $db->query(
     [':id' => $_GET['id']]
 )->fetch();
 
+
+
+if (!$note) {
+    abort();
+}
+
+if ($currentUserID !==  'user_id') {
+    abort(Response::FORBIDDEN);
+}
 
 
 require 'views/note.view.php';
