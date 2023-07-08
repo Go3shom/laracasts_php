@@ -14,12 +14,11 @@ $note = $db->query(
 )->fetch();
 
 
-
 if (!$note) {
     abort();
 }
 
-if ($currentUserID !==  'user_id') {
+if ($note['user_id'] !== $currentUserID) {
     abort(Response::FORBIDDEN);
 }
 
