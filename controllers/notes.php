@@ -7,9 +7,7 @@ $db = new Database($config['database']);
 $heading = 'Notes';
 
 
-$notes = $db->query("SELECT * FROM `notes`")->fetchAll();
+$notes = $db->query("SELECT * FROM `notes`")->findOrFail();
 
-
-// dd($notes);
 
 require 'views/notes.view.php';
