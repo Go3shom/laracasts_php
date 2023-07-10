@@ -8,13 +8,27 @@ $heading = 'Create A Note';
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db->query(
-        "INSERT INTO `notes` (`body`,`user_id`) VALUES (:body,:user_id)",
-        [
-            ':body' => $_POST['body'],
-            ':user_id' => 1
-        ]
-    );
+
+    $errors = [];
+
+    if (strlen($_POST['body']) === 0) {
+        $errors['body'] = 'The body is required.';
+    }
+
+
+    if (strlen($_POST['body']) > 1_000) {
+        $errors['body'] = 'The body can not be more than 1,000 characters.';
+    }
+
+    if (empty($errors)) {
+        $db->query(
+            "INSERT INTO `notes` (`body`, `user_id`) VALUES (:body, :user_id)",
+            [
+                ':body' => $_POST['body'],
+                ':user_id' => 1
+            ]
+        );
+    }
 }
 
 
