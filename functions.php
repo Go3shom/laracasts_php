@@ -29,7 +29,9 @@ function base_path($path)
 }
 
 
-function view($path)
+function view($path, $attributes = [])
 {
-    return base_path('views/' . $path);
+    extract($attributes);
+
+    require base_path('views/' . $path);
 }
