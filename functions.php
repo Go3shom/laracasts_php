@@ -21,3 +21,9 @@ function authorize($condition, $status = Response::FORBIDDEN)
         abort($status);
     }
 }
+
+
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
