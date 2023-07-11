@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <script src="/tailwindcss.js"></script>
-    <script src="/tailwindcss-forms.js"></script>
+    <script src="/js/tailwindcss.js"></script>
+    <script src="/js/tailwindcss-forms.js"></script>
 </head>
 
 <body class="h-full">
