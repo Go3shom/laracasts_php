@@ -17,4 +17,4 @@ $note = $db->query(
 authorize($note['user_id'] === $currentUserID);
 
 
-require base_path('views/notes/show.view.php');
+require view('notes/show.view.php');

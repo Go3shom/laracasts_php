@@ -10,4 +10,4 @@ $heading = 'My Notes';
 $notes = $db->query("SELECT * FROM `notes` WHERE `user_id` = 1")->get();
 
 
-require base_path('views/notes/index.view.php');
+require view('notes/index.view.php');
