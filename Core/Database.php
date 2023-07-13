@@ -1,5 +1,8 @@
 <?php
 
+namespace Core;
+
+
 class Database
 {
     public $connection;
