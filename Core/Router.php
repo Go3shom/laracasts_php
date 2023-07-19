@@ -19,21 +19,40 @@ class Router
 
     public function post($uri, $controller)
     {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method' => 'POST',
+        ];
     }
 
     public function patch($uri, $controller)
     {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method' => 'PATCH',
+        ];
     }
 
     public function put($uri, $controller)
     {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method' => 'PUT',
+        ];
     }
 
     public function delete($uri, $controller)
     {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method' => 'DELETE',
+        ];
     }
 }
-// $routes = require base_path('routes.php');
 
 
 // function routeToController($uri, $routes)
@@ -41,11 +60,11 @@ class Router
 //     if (array_key_exists($uri, $routes)) {
 //         require base_path($routes[$uri]);
 //     } else {
-//         abort();
-//     }
-// }
+    //         abort();
+    //     }
+    // }
 
-// function abort($code = 404)
+// protected function abort($code = 404)
 // {
 //     http_response_code($code);
 
@@ -53,7 +72,3 @@ class Router
 
 //     die();
 // }
-
-// $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-// routeToController($uri, $routes);
