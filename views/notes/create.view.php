@@ -5,7 +5,7 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-2">
 
-        <form method="POST">
+        <form method="POST" action="/notes">
             <div class="p-6 bg-gray-100">
                 <div class="container max-w-screen-md">
                     <div class="bg-white rounded-lg shadow-lg p-4 px-4 md:p-8 mb-6">
