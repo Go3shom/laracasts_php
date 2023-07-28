@@ -1,9 +1,10 @@
 <?php
 
 use Core\App;
+use Core\Database;
 
 
-$db = App::container()->resolve('Core\Database');
+$db = App::container()->resolve(Database::class);
 
 
 $currentUserID = 1;
