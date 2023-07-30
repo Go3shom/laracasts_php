@@ -12,14 +12,13 @@
         </p>
 
 
-        <form class="my-5" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="id" value="<?= $note['id'] ?>">
-
-            <button type="submit" class="rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm bg-red-900 hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
-                Delete
-            </button>
-        </form>
+        <div class="mt-5">
+            <div class="flex items-center gap-x-2">
+                <a href="/note/edit?id=<?= $note['id'] ?>" class="rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 hover:text-white border border-gray-400">
+                    Edit
+                </a>
+            </div>
+        </div>
     </div>
 </main>
 
